@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "name": "BankBalance",
+  "namespace": "com.kafkastreams.balanceAggregator.model.generatedResources",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "balanceAmount",
+      "type": [ {
+        "type": "string",
+        "java-class": "java.math.BigDecimal",
+        "default": "0"
+      } ]
+    },
+    {
+      "name": "lastBalanceUpdatedDate",
+      "type": {
+        "type": "int",
+        "logicalType": "date"
+      }
+    },
+    {
+      "name": "latestTransaction",
+      "type": "com.kafkastreams.balanceAggregator.model.generatedResources.BankTransaction"
+    }
+  ]
+}

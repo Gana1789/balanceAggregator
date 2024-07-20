@@ -1,0 +1,38 @@
+{
+  "type": "record",
+  "name": "BankTransaction",
+  "namespace": "com.kafkastreams.balanceAggregator.model.generatedResources",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "balanceId",
+      "type": "long"
+    },
+    {
+      "name": "amount",
+      "type": [ {
+      "type": "string",
+      "java-class": "java.math.BigDecimal"
+    } ]
+    },
+    {
+      "name": "time",
+      "type": {
+        "type": "int",
+        "logicalType": "date"
+      }
+    },
+    {
+      "name": "transactionState",
+      "type": {
+        "type": "enum",
+        "name": "BankTransactionState",
+        "symbols": ["CREATED", "REJECTED", "FAILED", "APPROVED"],
+        "default": "CREATED"
+      }
+    }
+  ]
+}
